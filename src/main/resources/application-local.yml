@@ -1,4 +1,11 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
 spring:
+  http:
+    encoding:
+      charset: UTF-8
   datasource:
     url: jdbc:mysql://localhost:3306/sports?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
     username: ${LOCAL_DB_USER}
@@ -12,3 +19,8 @@ spring:
       hibernate:
         format_sql: true
 
+logging:
+  level:
+    com.sport.backend: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
