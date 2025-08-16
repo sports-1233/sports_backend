@@ -1,6 +1,6 @@
 package com.sport.backend.Member.service;
 
-import com.sport.backend.Member.domain.dto.SignUpRequest;
+import com.sport.backend.Member.domain.dto.SignUpReqDTO;
 import com.sport.backend.Member.domain.entity.Member;
 import com.sport.backend.Member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public int signUp(SignUpRequest request) {
+    public int signUp(SignUpReqDTO request) {
 
         int result = 0;
 
@@ -32,7 +32,7 @@ public class MemberService {
         return result;
     }
 
-    private void validateDuplicateUser(SignUpRequest request) {
+    private void validateDuplicateUser(SignUpReqDTO request) {
         if (memberRepository.existsByUserId(request.getUserId())) {
             throw new IllegalArgumentException("이미 존재하는 아이디입니다");
         }
