@@ -2,12 +2,14 @@ package com.sport.backend.Member.domain.entity;
 
 import com.sport.backend.Member.domain.enums.Gender;
 import com.sport.backend.global.Entity.BaseTime;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Schema(description = "회원 정보")
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
