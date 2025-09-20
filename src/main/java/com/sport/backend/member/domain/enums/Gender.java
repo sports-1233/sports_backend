@@ -1,4 +1,4 @@
-package com.sport.backend.Member.domain.enums;
+package com.sport.backend.member.domain.enums;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

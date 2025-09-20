@@ -1,6 +1,6 @@
-package com.sport.backend.Member.repository;
+package com.sport.backend.member.repository;
 
-import com.sport.backend.Member.domain.entity.Member;
+import com.sport.backend.member.domain.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +13,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     
     boolean existsByEmail(String email);
     
-    boolean existsByPhoneNumber(String phoneNumber);
+    boolean existsByPhone(String phone);
     
     Optional<Member> findByUserId(String userId);
 }

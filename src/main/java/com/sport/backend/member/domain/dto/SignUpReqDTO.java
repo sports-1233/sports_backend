@@ -1,17 +1,16 @@
-package com.sport.backend.Member.domain.dto;
+package com.sport.backend.member.domain.dto;
 
-import com.sport.backend.Member.domain.entity.Member;
-import com.sport.backend.Member.domain.enums.Gender;
+import com.sport.backend.member.domain.entity.Member;
+import com.sport.backend.member.domain.enums.Gender;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Schema(description = "회원가입 요청 DTO")
 @Getter
-@Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class SignUpReqDTO {
 
     @Schema(description = "사용자 아이디", example = "user123", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -62,7 +61,11 @@ public class SignUpReqDTO {
                 .gender(this.gender)
                 .birthDate(this.birth)
                 .email(this.email)
-                .phoneNumber(this.phone)
+                .phone(this.phone)
                 .build();
+    }
+
+    public void updatePassword(String password) {
+        this.password = password;
     }
 }

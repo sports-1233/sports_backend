@@ -1,7 +1,7 @@
-package com.sport.backend.Member.domain.entity;
+package com.sport.backend.member.domain.entity;
 
-import com.sport.backend.Member.domain.enums.Gender;
-import com.sport.backend.global.Entity.BaseTime;
+import com.sport.backend.member.domain.enums.Gender;
+import com.sport.backend.global.entity.BaseTime;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -22,7 +22,7 @@ public class Member extends BaseTime {
     @Column(nullable = false, unique = true, length = 20)
     private String userId;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 300)
     private String password;
 
     @Column(nullable = false, length = 30)
@@ -39,17 +39,17 @@ public class Member extends BaseTime {
     private String email;
 
     @Column(nullable = false, unique = true, length = 15)
-    private String phoneNumber;
+    private String phone;
 
     @Builder
     public Member(String userId, String password, String name, Gender gender,
-                  String birthDate, String email, String phoneNumber) {
+                  String birthDate, String email, String phone) {
         this.userId = userId;
         this.password = password;
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
         this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
     }
 }
